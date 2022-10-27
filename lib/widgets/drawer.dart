@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:scouts_app/home.dart';
+import 'package:scouts_app/profile.dart';
 import 'package:scouts_app/signin.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({Key? key}) : super(key: key);
-
+  final tabIndex;
+  const CustomDrawer({Key? key, required this.tabIndex}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SidebarX(
       showToggleButton: false,
-      controller: SidebarXController(selectedIndex: 0, extended: true),
+      controller: SidebarXController(selectedIndex: tabIndex, extended: true),
       theme: SidebarXTheme(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -63,7 +65,14 @@ class CustomDrawer extends StatelessWidget {
       items: [
         SidebarXItem(
           label: 'Home',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Home(),
+              ),
+            );
+          },
           iconWidget: const Padding(
             padding: EdgeInsets.only(left: 20),
             child: Icon(Icons.home),
@@ -71,7 +80,14 @@ class CustomDrawer extends StatelessWidget {
         ),
         SidebarXItem(
           label: 'Profile',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Profile(),
+              ),
+            );
+          },
           iconWidget: const Padding(
             padding: EdgeInsets.only(left: 20),
             child: Icon(Icons.person),

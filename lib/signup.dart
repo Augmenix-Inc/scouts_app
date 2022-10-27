@@ -23,7 +23,6 @@ class _SignUpState extends State<SignUp> {
       width: screenWidth,
       height: screenHeight,
       child: Scaffold(
-        drawer: const CustomDrawer(),
         body: SafeArea(
           child: Column(
             children: [
