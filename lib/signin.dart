@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:scouts_app/home.dart';
 import 'package:scouts_app/signup.dart';
 
 class SignIn extends StatefulWidget {
@@ -100,7 +101,13 @@ class _SignInState extends State<SignIn> {
                           if (_formKey.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                content: Text('Processing Data'),
+                                content: Text('Successfully Signed In'),
+                              ),
+                            );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Home(),
                               ),
                             );
                           }

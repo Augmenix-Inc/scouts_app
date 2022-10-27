@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scouts_app/signin.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -86,7 +87,14 @@ class CustomDrawer extends StatelessWidget {
         ),
         SidebarXItem(
           label: 'Logout',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SignIn(),
+              ),
+            );
+          },
           iconWidget: const Padding(
             padding: EdgeInsets.only(left: 20),
             child: Icon(Icons.logout),
