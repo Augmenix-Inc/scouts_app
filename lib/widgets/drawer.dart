@@ -79,6 +79,14 @@ class CustomDrawer extends StatelessWidget {
           ),
         ),
         SidebarXItem(
+          label: 'Badges',
+          onTap: () {},
+          iconWidget: const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Icon(Icons.badge),
+          ),
+        ),
+        SidebarXItem(
           label: 'Profile',
           onTap: () {
             Navigator.push(
@@ -91,14 +99,6 @@ class CustomDrawer extends StatelessWidget {
           iconWidget: const Padding(
             padding: EdgeInsets.only(left: 20),
             child: Icon(Icons.person),
-          ),
-        ),
-        SidebarXItem(
-          label: 'Setting',
-          onTap: () {},
-          iconWidget: const Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Icon(Icons.settings),
           ),
         ),
         SidebarXItem(
