@@ -88,6 +88,20 @@ class CustomDrawer extends StatelessWidget {
         SidebarXItem(
           label: 'Logout',
           onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: const Text('Logged Out Successfully!'),
+                backgroundColor: Theme.of(context).colorScheme.tertiary,
+                behavior: SnackBarBehavior.floating,
+                action: SnackBarAction(
+                  label: 'Dismiss',
+                  disabledTextColor: Colors.white,
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                  },
+                ),
+              ),
+            );
             Navigator.push(
               context,
               MaterialPageRoute(
