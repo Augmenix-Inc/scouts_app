@@ -100,10 +100,22 @@ class _SignInState extends State<SignIn> {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Successfully Signed In'),
+                              SnackBar(
+                                content: const Text('Successfully signed in!'),
+                                backgroundColor:
+                                    Theme.of(context).colorScheme.tertiary,
+                                behavior: SnackBarBehavior.floating,
+                                action: SnackBarAction(
+                                  label: 'Dismiss',
+                                  disabledTextColor: Colors.white,
+                                  onPressed: () {
+                                    ScaffoldMessenger.of(context)
+                                        .hideCurrentSnackBar();
+                                  },
+                                ),
                               ),
                             );
+
                             Navigator.push(
                               context,
                               MaterialPageRoute(

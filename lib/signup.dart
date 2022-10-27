@@ -93,8 +93,19 @@ class _SignUpState extends State<SignUp> {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Successfully Signed Up'),
+                              SnackBar(
+                                content: const Text('Successfully signed up!'),
+                                backgroundColor:
+                                    Theme.of(context).colorScheme.tertiary,
+                                behavior: SnackBarBehavior.floating,
+                                action: SnackBarAction(
+                                  label: 'Dismiss',
+                                  disabledTextColor: Colors.white,
+                                  onPressed: () {
+                                    ScaffoldMessenger.of(context)
+                                        .hideCurrentSnackBar();
+                                  },
+                                ),
                               ),
                             );
                             Navigator.push(
