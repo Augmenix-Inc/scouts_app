@@ -80,10 +80,6 @@ class _SignInState extends State<SignIn> {
                           if (value == null || value.isEmpty) {
                             return 'Please enter some text';
                           }
-                          if (value.length < 6) {
-                            return 'Password must be at least 6 characters';
-                          }
-                          return null;
                         },
                       ),
                       TextButton(
