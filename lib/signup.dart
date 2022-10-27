@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:scouts_app/signup.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+class SignUp extends StatefulWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
 
   final _emailcontroller = TextEditingController();
@@ -24,7 +23,7 @@ class _SignInState extends State<SignIn> {
             const Padding(
               padding: EdgeInsets.only(top: 50),
               child: Text(
-                'Sign In',
+                'Join Stacked',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -85,10 +84,6 @@ class _SignInState extends State<SignIn> {
                         return null;
                       },
                     ),
-                    TextButton(
-                      onPressed: () {},
-                      child: const Text('Forgot Password?'),
-                    ),
                     const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
@@ -106,7 +101,8 @@ class _SignInState extends State<SignIn> {
                         child: Row(
                           children: const [
                             Spacer(),
-                            Text('Login', style: TextStyle(fontSize: 18)),
+                            Text('Create Account',
+                                style: TextStyle(fontSize: 18)),
                             Spacer(),
                           ],
                         ),
@@ -115,17 +111,12 @@ class _SignInState extends State<SignIn> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Don't have an account?"),
+                        const Text("Already with us?"),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SignUp(),
-                              ),
-                            );
+                            Navigator.pop(context);
                           },
-                          child: const Text('Sign Up'),
+                          child: const Text('Sign In'),
                         ),
                       ],
                     )
