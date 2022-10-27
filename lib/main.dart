@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scouts_app/home.dart';
 import 'package:scouts_app/signin.dart';
 import 'package:scouts_app/signup.dart';
 import 'package:scouts_app/theme.dart';
