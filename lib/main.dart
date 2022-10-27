@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scouts_app/home.dart';
 import 'package:scouts_app/signin.dart';
-import 'package:scouts_app/signup.dart';
 import 'package:scouts_app/theme.dart';
 
 void main() {
@@ -11,13 +10,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      //theme: lightTheme,
-      //darkTheme: darkTheme,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       home: SignIn(),
     );
   }

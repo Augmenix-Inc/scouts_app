@@ -8,20 +8,25 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SidebarX(
       showToggleButton: false,
-      controller: SidebarXController(selectedIndex: 2, extended: true),
+      controller: SidebarXController(selectedIndex: 0, extended: true),
       theme: SidebarXTheme(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Color.fromARGB(255, 0, 11, 69),
+          borderRadius: BorderRadius.circular(0),
+          color: Theme.of(context).colorScheme.onSecondary,
         ),
-        textStyle: const TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-        selectedTextStyle:
-            const TextStyle(color: Color.fromARGB(255, 208, 255, 0)),
+        selectedTextStyle: TextStyle(
+          color: Theme.of(context).colorScheme.primary,
+          fontSize: 18,
+        ),
         itemTextPadding: const EdgeInsets.only(left: 30),
         selectedItemTextPadding: const EdgeInsets.only(left: 30),
-        iconTheme: const IconThemeData(
-          color: Color.fromARGB(255, 0, 136, 255),
+        iconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.outline,
+          size: 18,
+        ),
+        selectedIconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.primary,
           size: 20,
         ),
       ),
@@ -40,26 +45,52 @@ class CustomDrawer extends StatelessWidget {
           ),
         );
       },
+      footerBuilder: (context, extended) => SizedBox(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: const [
+            Divider(
+              color: Colors.grey,
+            ),
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text('For Scouts By Scouts'),
+            ),
+          ],
+        ),
+      ),
       items: [
         SidebarXItem(
-          icon: Icons.home,
           label: 'Home',
           onTap: () {},
+          iconWidget: const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Icon(Icons.home),
+          ),
         ),
         SidebarXItem(
-          icon: Icons.person,
           label: 'Profile',
           onTap: () {},
+          iconWidget: const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Icon(Icons.person),
+          ),
         ),
         SidebarXItem(
-          icon: Icons.settings,
-          label: 'Settings',
+          label: 'Setting',
           onTap: () {},
+          iconWidget: const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Icon(Icons.settings),
+          ),
         ),
         SidebarXItem(
-          icon: Icons.logout,
           label: 'Logout',
           onTap: () {},
+          iconWidget: const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Icon(Icons.logout),
+          ),
         ),
       ],
     );

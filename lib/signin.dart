@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:scouts_app/signin.dart';
 import 'package:scouts_app/signup.dart';
 
 class SignIn extends StatefulWidget {
@@ -24,11 +23,12 @@ class _SignInState extends State<SignIn> {
         body: SafeArea(
           child: Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 50),
+              Padding(
+                padding: const EdgeInsets.only(top: 50),
                 child: Text(
                   'Sign In',
                   style: TextStyle(
+                    color: Theme.of(context).textTheme.bodyText1!.color,
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
@@ -87,7 +87,12 @@ class _SignInState extends State<SignIn> {
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: const Text('Forgot Password?'),
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
                       ),
                       const SizedBox(height: 20),
                       ElevatedButton(
