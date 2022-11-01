@@ -36,14 +36,14 @@ class _HomeState extends State<Home> {
               children: [
                 CircleAvatar(
                   backgroundImage: NetworkImage(user!.photoURL!),
-                  radius: 20,
+                  radius: screenWidth * 0.1,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 Text(
                   user.displayName!,
-                  style: Theme.of(context).textTheme.headline2!.copyWith(
+                  style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                         color: Theme.of(context).textTheme.bodyText1!.color,
                       ),
                 ),
@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
                 ),
                 Text(
                   user.email!,
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
                         color: Theme.of(context).textTheme.bodyText1!.color,
                       ),
                 ),

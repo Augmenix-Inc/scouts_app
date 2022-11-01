@@ -25,7 +25,7 @@ class _ProfileState extends State<Profile> {
             icon: const Icon(Icons.menu)),
       ),
       drawer: const CustomDrawer(
-        tabIndex: 1,
+        tabIndex: 2,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
