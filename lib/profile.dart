@@ -30,7 +30,11 @@ class _ProfileState extends State<Profile> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
-            child: Column(children: [Text('Profile')]),
+            child: Column(
+              children: const [
+                Text('Profile'),
+              ],
+            ),
           ),
         ),
       ),

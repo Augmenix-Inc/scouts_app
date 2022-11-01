@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scouts_app/badges.dart';
 import 'package:scouts_app/home.dart';
 import 'package:scouts_app/profile.dart';
 import 'package:scouts_app/welcome.dart';
@@ -80,7 +81,14 @@ class CustomDrawer extends StatelessWidget {
         ),
         SidebarXItem(
           label: 'Badges',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Badges(),
+              ),
+            );
+          },
           iconWidget: const Padding(
             padding: EdgeInsets.only(left: 20),
             child: Icon(Icons.badge),
