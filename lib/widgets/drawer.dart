@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scouts_app/home.dart';
 import 'package:scouts_app/profile.dart';
-import 'package:scouts_app/signin.dart';
+import 'package:scouts_app/welcome.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -121,7 +121,7 @@ class CustomDrawer extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const SignIn(),
+                builder: (context) => const WelcomePage(),
               ),
             );
           },

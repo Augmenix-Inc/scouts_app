@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/drawer.dart';
@@ -15,6 +16,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
     var screenHeight = MediaQuery.of(context).size.height;
+    User? user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -33,14 +35,14 @@ class _HomeState extends State<Home> {
             child: Column(
               children: [
                 CircleAvatar(
-                  radius: screenWidth * 0.2,
-                  backgroundImage: const AssetImage('assets/logo.jpeg'),
+                  backgroundImage: NetworkImage(user!.photoURL!),
+                  radius: 20,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 Text(
-                  'Daksh Thapar',
+                  user.displayName!,
                   style: Theme.of(context).textTheme.headline2!.copyWith(
                         color: Theme.of(context).textTheme.bodyText1!.color,
                       ),
@@ -49,7 +51,7 @@ class _HomeState extends State<Home> {
                   height: 10,
                 ),
                 Text(
-                  'Patrol Leader (Zetta)',
+                  user.email!,
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
                         color: Theme.of(context).textTheme.bodyText1!.color,
                       ),

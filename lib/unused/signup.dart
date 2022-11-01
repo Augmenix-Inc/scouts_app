@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:scouts_app/signin.dart';
+import 'package:scouts_app/unused/signin.dart';
 import 'package:scouts_app/widgets/drawer.dart';
 
-import 'home.dart';
+import '../home.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
